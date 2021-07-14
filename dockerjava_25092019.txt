@@ -57,6 +57,7 @@ docker pull oscarfonts/h2
 
 step 1 :
 
+docker run --name es-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=ericecommdb -e MYSQL_USER=demo_user -e MYSQL_PASSWORD=demo_pass -d mysql
 
 
 docker run --name pwc-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=demodb -e MYSQL_USER=demo_user -e MYSQL_PASSWORD=demo_pass -d mysql
@@ -219,7 +220,7 @@ step 2
 
 create docker file
 FROM java:8
-LABEL maintainer=ìchathuranga.t@gmail.comî
+LABEL maintainer=‚Äúchathuranga.t@gmail.com‚Äù
 VOLUME /tmp
 EXPOSE 8080
 ADD target/spring-boot-data-jpa-example-0.0.1-SNAPSHOT.jar spring-boot-data-jpa-example-0.0.1-SNAPSHOT.jar
@@ -556,7 +557,7 @@ docker network create --driver bridge virtusa_network
 docker network inspect my_isolated_bridge_network
 docker network ls
 docker run --net=my_isolated_bridge_network --name=my_psql_db postgres
-docker run ñit -ñnetwork=my_isolated_bridge_network ubuntu:latest /bin/bash 
+docker run ‚Äìit -‚Äìnetwork=my_isolated_bridge_network ubuntu:latest /bin/bash 
 docker network inspect my_isolated_bridge_network
 
 
